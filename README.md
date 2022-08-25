@@ -15,20 +15,79 @@ To save time in this process, the IT team suggested an ML system that is capable
 
 
 ## Hypothesis and how to validate?
-* List here your project hypothesis(es) and how you envision to validate it (them).
+* We suspect leaves of plants that are infected with powdery mildew have clear signs distinguishing them from uninfected plants.
+  *  An average image study can help to investigate it and if there are clear differences then we will know.
 
 
 ## Rationale to map the business requirements to the Data Visualizations and ML tasks
-* List your business requirements and a rationale to map them to the Data Visualizations and ML tasks.
+* **Business Requirement 1**: Data Visualization 
+	* We will display the "mean" and "standard deviation" images for infected and healthy leaves.
+ 	* We will display the difference between an average infected leaf and an average healthy cell.
+	* We will display a image montage for either infected or healthy leaves.
+	
+	
+
+* **Business Requirement 2**:  Classification
+	* We want to predict if a given leaf is healthy or not. 
+	* We want to build a binary classifier and generate reports.
 
 
 ## ML Business Case
-* In the previous bullet, you potentially visualized a ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
+### Mildew detection binary classifier
+* We want an Ml model to predict if a leaf is infected with powdery mildew or not, based on the dataset provided. It is a supervised, 2 class, single label, binary classification model
+* Our ideal outcome is provide an algorith that can speed up the detection of powdery mildew in cherry plants.
+* The model success metrics are
+	* Accuracy of 97% or above on the test set.
+* The model output is defined as a flag, indicating if the plant is healthy or not and the associated probability of being infected or not. A picture can be uploaded to the app and the model will make a prediciton. The prediction is made on the fly (not in batches).
+* Heuristics: The current diagnostic involves an employee spending around 30 minutes in each tree, taking a few samples of tree leaves and verifying visually if the leaf tree is healthy or has powdery mildew. If it has powdery mildew, the employee applies a specific compound to kill the fungus. The time spent applying this compound is 1 minute.  The company has thousands of cherry trees located in multiple farms across the country. As a result, this manual process is not scalable due to time spent in the manual process inspection.
+* The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves).
+	* contains +4 thousand images taken from client's crop fields. The images show cherry leaves that are healthy and cherry leaves that contain powdery mildew, which is     a fungal disease that affects a wide range of plants
 
 
 ## Dashboard Design
-* List all dashboard pages and its content, either block of information or widgets, like: buttons, checkbox, image, or any other item that your dashboard library supports.
-* Eventually, during the project development, you may revisit your dashboard plan to update a give feature (for example, in the beginning of the project you were confident you would use a given plot to display an insight but eventually you needed to use another plot type).
+
+### Page 1: Quick Project Summary
+* Quick project summary
+	* General Information
+		* Powdery mildew, which is a fungal disease that affects a wide range of plant
+		* Currently, the process is to manually verify if a given cherry tree contains powdery mildew. An employee spends around 30 minutes 
+      in each tree, taking a few samples of tree leaves and verifying visually if the leaf tree is healthy or has powdery mildew. 
+      If it has powdery mildew, the employee applies a specific compound to kill the fungus. The time spent applying this compound is 1 minute. 
+      The company has thousands of cherry trees located in multiple farms across the country. As a result, this manual process is not scalable 
+      due to time spent in the manual process inspection 
+		* To save time in this process, the IT team suggested an ML system that is capable of detecting instantly, using a tree leaf image, 
+      if it is healthy or has powdery mildew. A similar manual process is in place for other crops for detecting pests, and if this initiative 
+      is successful, there is a realistic chance to replicate this project to all other crops. The dataset is a collection of cherry leaf 
+      images provided by Farmy & Foods, taken from their crops
+	* Project Dataset
+		* The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves).
+	  * contains +4 thousand images taken from client's crop fields. The images show cherry leaves that are healthy and cherry leaves that contain powdery mildew, which       is a fungal disease that affects a wide range of plants
+	* Link to addition ainformation
+	* Business requirements
+		*  The client is interested in conducting a study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
+    *  The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
+
+### Page 2: leaves Visualizer
+* It will answer business requirement 1
+	* Checkbox 1 - Difference between average and variability image
+	* Checkbox 2 - Differences between average infected and average healthy leaves
+	* Checkbox 3 - Image Montage
+
+### Page 3: Mildew Detector
+* Business requirement 2 information - "The client is interested to tell whether a given leaf contains powdery mildew or not."
+* Link to download a set of healthy and infected leaf images for live prediction.
+* User Interface with a file uploader widget. The user should upload multiple leaves. It will display the image and a prediction statement, indicating if the leaf is infected or not with powdery mildew and the probability associated with this statement. 
+* Table with image name and prediction results.
+* Download button to download table.
+
+### Page 4: Project Hypothesis and Validation
+* Block for each project hypothesis, describe the conclusion and how you validated.
+
+### Page 5: ML Performance Metrics
+* Label Frequencies for Train, Validation and Test Sets
+* Model History - Accuracy and Losses
+* Model evaluation result
+
 
 
 ## Unfixed Bugs
@@ -48,7 +107,7 @@ To save time in this process, the IT team suggested an ML system that is capable
 
 
 ## Main Data Analysis and Machine Learning Libraries
-* Here you should list the libraries you used in the project and provide example(s) on how you used these libraries.
+* Tensorflow. Used to make the convolutional neural network that classifies the leaves as either infected or uninfected
 
 
 ## Credits 
