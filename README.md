@@ -35,7 +35,7 @@ To save time in this process, the IT team suggested an ML system that is capable
 ## ML Business Case
 ### Mildew detection binary classifier
 * We want an Ml model to predict if a leaf is infected with powdery mildew or not, based on the dataset provided. It is a supervised, 2 class, single label, binary classification model
-* Our ideal outcome is provide an algorith that can speed up the detection of powdery mildew in cherry plants.
+* Our ideal outcome is provide an algorithm that can speed up the detection of powdery mildew in cherry plants.
 * The model success metrics are
 	* Accuracy of 97% or above on the test set.
 * The model output is defined as a flag, indicating if the plant is healthy or not and the associated probability of being infected or not. A picture can be uploaded to the app and the model will make a prediciton. The prediction is made on the fly (not in batches).
