@@ -10,8 +10,10 @@ def page_ml_performance_metrics():
 
     st.write("### Train, Validation and Test Set: Labels Frequencies")
 
-    labels_distribution = plt.imread(f"outputs/{version}/labels_distribution.png")
-    st.image(labels_distribution, caption='Labels Distribution on Train, Validation and Test Sets')
+    healthy_distribution = plt.imread(f"outputs/{version}/healthy_files.png")
+    infected_distribution = plt.imread(f"outputs/{version}/infected_files.png")
+    st.image(healthy_distribution, caption='Labels Distribution on Train, Validation and Test Sets')
+    st.image(infected_distribution, caption='Labels Distribution on Train, Validation and Test Sets')
     st.write("---")
 
 
@@ -24,8 +26,5 @@ def page_ml_performance_metrics():
         model_loss = plt.imread(f"outputs/{version}/model_training_losses.png")
         st.image(model_loss, caption='Model Traninig Losses')
     st.write("---")
-
-    st.write("### Generalised Performance on Test Set")
-    st.dataframe(pd.DataFrame(load_test_evaluation(version), index=['Loss', 'Accuracy']))
     
     
